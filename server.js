@@ -14,9 +14,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(middleware.bodyParserJson);
 app.use(middleware.bodyParserUrlencoded);
+
 app.use('/create',router.createcontainer);
 app.use('/delete',router.deletecontainer);
 app.use('/stop',router.stopcontainer);
+app.use('/start',router.startcontainer);
 
 app.use(router.Proxy);
 
