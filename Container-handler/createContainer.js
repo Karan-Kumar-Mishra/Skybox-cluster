@@ -6,24 +6,24 @@ async function createContainer() {
         Image: 'file_cluster',
         Tty: true,  
         OpenStdin: true,
-        ExposedPorts: {
-            '5173': {} ,
-            '3000': {} 
+        // ExposedPorts: {
+        //     '5173': {} ,
+        //     '3000': {} 
 
-        },
+        // },
         HostConfig: {
-            PortBindings: {
-                '5173': [
-                    {
-                        HostPort: Data.get_frontend_port().toString() 
-                    }
-                ],
-                '3000': [
-                    {
-                        HostPort: Data.get_backend_port().toString() 
-                    }
-                ]
-            }
+            // PortBindings: {
+            //     '5173': [
+            //         {
+            //             HostPort: Data.get_frontend_port().toString() 
+            //         }
+            //     ],
+            //     '3000': [
+            //         {
+            //             HostPort: Data.get_backend_port().toString() 
+            //         }
+            //     ]
+            // }
         }
         
     });

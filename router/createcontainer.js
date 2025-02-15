@@ -10,8 +10,9 @@ export default createcontainer.post('/', async (req,res)=>{
   await contaner.start();
   const container_info= await contaner.inspect();
   res.send({
+    container_id:container_info.Id,
     ip_address:container_info.NetworkSettings.IPAddress,
     frontend_port: Data.get_frontend_port(),
     backend_port:Data.get_backend_port()
-  })
+  });
 })

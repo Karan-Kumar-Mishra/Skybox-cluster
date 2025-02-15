@@ -1,8 +1,8 @@
 import express from "express"
-const deletecontainer = express.Router();
+const stopcontainer = express.Router();
 import * as container_handler from "../Container-handler/index.js"
 
-export default deletecontainer.delete('/', async (req, res) => {
+export default stopcontainer.post('/', async (req, res) => {
     const contianer_id = req.body.container_id;
     if (contianer_id === undefined || contianer_id == null) {
         res.send({
@@ -10,10 +10,8 @@ export default deletecontainer.delete('/', async (req, res) => {
         })
     }
     else {
-
-        let result = await container_handler.deleteContainer(contianer_id)
         res.send({
-            status: result
+            status: await container_handler.stopContainer(contianer_id)
         })
     }
 })

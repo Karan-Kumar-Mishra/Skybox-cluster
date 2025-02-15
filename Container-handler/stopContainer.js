@@ -1,7 +1,7 @@
 import * as Data from "../Data/index.js"
-async function deleteContainer(id) {
+async function stopContainer(id) {
     let container = Data.Docker.getContainer(id);
-    await container.remove((err, data) => {
+    await container.stop((err, data) => {
         if (err) {
             return err;
         }
@@ -10,4 +10,4 @@ async function deleteContainer(id) {
         }
     })
 }
-export default deleteContainer;
+export default stopContainer;
